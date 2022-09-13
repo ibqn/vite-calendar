@@ -83,8 +83,14 @@ const Calendar = () => {
               <div>S</div>
             </div>
             <div className="mt-2 grid grid-cols-7 text-sm">
-              {days.map((day, dayIdx) => (
-                <div key={day.toString()} className="py-1.5">
+              {days.map((day, dayIndex) => (
+                <div
+                  key={day.toString()}
+                  className={classNames(
+                    dayIndex > 6 && 'border-t border-gray-200',
+                    'py-1.5'
+                  )}
+                >
                   <button
                     type="button"
                     onClick={() => setSelectedDay(day)}
